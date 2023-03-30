@@ -1,10 +1,11 @@
 import Article from "./Article";
 
-import logements from "../logements.json";
+import logements from "../../logements.json";
 
 
 const Gallery = () => {
     return (
+
 
         <section className="gallery items flex gap-3 flex-expand  flex-center">
 
@@ -14,6 +15,7 @@ const Gallery = () => {
 
 
         </section>
+
     )
 }
 export default Gallery;
