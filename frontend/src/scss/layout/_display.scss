@@ -71,42 +71,7 @@ $spaceamounts: (
 }
 
 /* flex display*/
-%flex-default {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.flex {
-    @extend %flex-default;
-}
-
-.flex-row {
-    flex-direction: row;
-}
-
-.flex-col {
-    flex-direction: column;
-}
-
-.flex-row-reverse {
-    flex-direction: row-reverse;
-}
-
-.flex-col-reverse {
-    flex-direction: column-reverse;
-}
-
-.flex-expand>* {
-    flex-grow: 1;
-}
-
-.flex-responsive>* {
-    flex: 1 1 300px;
-}
+@import "./flex.scss";
 
 .grow {
     flex-grow: 1;

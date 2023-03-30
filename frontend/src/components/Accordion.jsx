@@ -6,7 +6,7 @@ const Accordion = ({ data }) => {
     return (<article className={styles.accordion}>
         <Button className="text-left w-full">
             <h2>{title}</h2></Button>
-        <div className={styles['accordion__content']}>
+        <div className="bg--secondary p-1">
             <p>{content}</p>
         </div>
     </ article>);
