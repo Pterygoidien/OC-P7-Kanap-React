@@ -8,7 +8,7 @@ import Logement from '../pages/logement/Logement';
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/a-propos" element={<About />} />
             <Route path="/logements/:id" element={<Logement />} />
             <Route path="*" element={<Error404 />} />

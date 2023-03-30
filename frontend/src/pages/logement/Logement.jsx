@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Accordion from "../../components/Accordion";
+import Button from "../../components/Button";
 
 import logements from "../../logements.json";
 
@@ -26,25 +27,41 @@ const Logement = () => {
 
     return (
         <main className="container">
-            <h1>
-                {title}
-            </h1>
-            <h2>
-                {location}
-            </h2>
+            <section className="rental-caroussel">
+                <img src={logement.cover} alt={title} />
+            </section>
+            <div className="flex">
+                <section className="rental-highlight">
+                    <h1>
+                        {title}
+                    </h1>
+                    <h2>
+                        {location}
+                    </h2>
+                    <div className="tags flex ">
+                        {tags && tags.map((tag) => (
+                            <Button key={tag}>{tag}</Button>
 
-            {tags && tags.map((tag) => (
-                <button key={tag}>{tag}</button>
-            ))}
-            <div className="author">
-                {host.name}
-                {host.picture ? <img src={host.picture} alt={host.name} /> : null}
-                {rating}
+                        ))}
+                    </div>
+
+                </section>
+                <section className="rental-infos flex">
+                    <div className="rating">
+                        <span>{rating}</span>
+                        <span>★</span>
+                    </div>
+                    <div className="author">
+                        {host.name}
+                        {host.picture ? <img src={host.picture} alt={host.name} /> : null}
+                    </div>
+                </section>
             </div>
 
-
-            <Accordion data={desc} />
-            <Accordion data={equip} />
+            <section className="rental-accordions flex">
+                <Accordion data={desc} />
+                <Accordion data={equip} />
+            </section>
         </main>
     )
 }
