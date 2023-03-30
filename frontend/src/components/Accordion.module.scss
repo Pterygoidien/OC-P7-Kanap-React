@@ -1,0 +1,9 @@
+.accordion {
+    &__title {
+        background-color: var(--primary-color);
+    }
+
+    &__content {
+        background-color: var(--secondary-color);
+    }
+}
