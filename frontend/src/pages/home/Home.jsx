@@ -1,7 +1,11 @@
+import Banner from '../../components/Banner';
+import Gallery from '../../components/Gallery';
+
 const Home = () => {
     return (
         <main className="container">
-            Hello world
+            <Banner />
+            <Gallery />
         </main>
     );
 }

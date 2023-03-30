@@ -1,4 +1,5 @@
 import Logo from '../../Logo';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -8,8 +9,8 @@ const Header = () => {
                 <Logo fill="#FF6060" className="logo" />
                 <nav>
                     <ul className="flex">
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">A propos</a></li>
+                        <li><Link to="./">Accueil</Link></li>
+                        <li><Link to="./a-propos">A propos</Link></li>
                     </ul>
                 </nav>
             </div>
