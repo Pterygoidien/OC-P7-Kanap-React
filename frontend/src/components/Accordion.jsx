@@ -4,7 +4,7 @@ const Accordion = ({ data }) => {
     const { title, content } = data;
     return (<article className={styles.accordion}>
         <div className={styles['accordion__title']}>
-            <h2>{title}</h2>
+            <h3>{title}</h3>
         </div>
         <div className={styles['accordion__content']}>
             <p>{content}</p>
