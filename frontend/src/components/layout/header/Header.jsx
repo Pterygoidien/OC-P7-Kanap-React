@@ -1,13 +1,13 @@
-import Logo from '../Logo';
+import Logo from '../../Logo';
 import './Header.css';
 
 const Header = () => {
     return (
         <header>
-            <div className="container">
+            <div className="container flex">
                 <Logo fill="#FF6060" className="logo" />
                 <nav>
-                    <ul className="">
+                    <ul className="flex">
                         <li><a href="#">Accueil</a></li>
                         <li><a href="#">A propos</a></li>
                     </ul>

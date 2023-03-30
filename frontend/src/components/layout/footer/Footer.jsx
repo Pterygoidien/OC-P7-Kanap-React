@@ -1,10 +1,10 @@
-import Logo from "../Logo";
+import Logo from "../../Logo";
 import "./Footer.css";
 export default function Footer() {
     return (
         <footer>
             <div className="container">
-                <Logo fill="#ffffff" className="logo " />
+                <Logo fill="#ffffff" className="logo mx-auto" />
             </div>
         </footer>
     )

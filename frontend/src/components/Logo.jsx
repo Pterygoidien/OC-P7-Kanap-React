@@ -8,4 +8,4 @@ const Logo = ({ fill = "currentColor" }) => {
     </svg>
     )
 }
-export default Logo
+export default Logo;
