@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 
 import styles from "./Logement.module.scss";
 
-import logements from "../../logements.json";
+import logements from "../../assets/logements.json"
 
 
 
@@ -31,7 +31,7 @@ const Logement = () => {
 
     return (
         <main className="container">
-            <div className="rental-caroussel">
+            <div className={styles['rental-carousel']}>
                 <img src={logement.cover} alt={title} />
             </div>
             <div className="flex flex-expand items-center">

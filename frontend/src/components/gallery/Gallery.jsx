@@ -1,6 +1,6 @@
 import Article from "./Article";
 
-import logements from "../../logements.json";
+import logements from "../../assets/logements.json"
 
 
 const Gallery = () => {
