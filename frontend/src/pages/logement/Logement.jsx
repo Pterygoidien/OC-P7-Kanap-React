@@ -2,7 +2,12 @@ import { useParams } from "react-router-dom";
 import Accordion from "../../components/Accordion";
 import Button from "../../components/Button";
 
+import styles from "./Logement.module.scss";
+import styled from "styled-components";
+
 import logements from "../../logements.json";
+
+
 
 
 const Logement = () => {
@@ -30,7 +35,7 @@ const Logement = () => {
             <section className="rental-caroussel">
                 <img src={logement.cover} alt={title} />
             </section>
-            <div className="flex">
+            <div className="flex justify-between align-center flex-expand">
                 <section className="rental-highlight">
                     <h1>
                         {title}
@@ -38,7 +43,7 @@ const Logement = () => {
                     <h2>
                         {location}
                     </h2>
-                    <div className="tags flex ">
+                    <div className="tags flex justify-start ">
                         {tags && tags.map((tag) => (
                             <Button key={tag}>{tag}</Button>
 
@@ -51,16 +56,26 @@ const Logement = () => {
                         <span>{rating}</span>
                         <span>★</span>
                     </div>
-                    <div className="author">
-                        {host.name}
-                        {host.picture ? <img src={host.picture} alt={host.name} /> : null}
+                    <div className="author flex">
+                        <div className="author__name flex flex-col">
+                            {host.name.split(" ").map((name) => (
+                                <span key={name}>{name}</span>
+                            ))
+                            }
+                        </div>
+                        <div className={styles['author__picture']}>
+                            <img src={host.picture} alt={host.name} />
+                        </div>
+
+
                     </div>
                 </section>
             </div>
 
-            <section className="rental-accordions flex">
+            <section className="rental-accordions flex flex-responsive">
                 <Accordion data={desc} />
                 <Accordion data={equip} />
+
             </section>
         </main>
     )

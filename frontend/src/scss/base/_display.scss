@@ -104,6 +104,10 @@ $spaceamounts: (
     flex-grow: 1;
 }
 
+.flex-responsive>* {
+    flex: 1 1 300px;
+}
+
 .grow {
     flex-grow: 1;
 }

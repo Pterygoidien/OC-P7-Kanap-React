@@ -1,11 +1,11 @@
 import styles from './Accordion.module.scss';
+import Button from './Button';
 
 const Accordion = ({ data }) => {
     const { title, content } = data;
     return (<article className={styles.accordion}>
-        <div className={styles['accordion__title']}>
-            <h3>{title}</h3>
-        </div>
+        <Button className="text-left w-full">
+            <h2>{title}</h2></Button>
         <div className={styles['accordion__content']}>
             <p>{content}</p>
         </div>
