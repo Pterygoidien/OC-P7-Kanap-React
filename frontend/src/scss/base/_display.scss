@@ -100,6 +100,10 @@ $spaceamounts: (
     flex-direction: column-reverse;
 }
 
+.flex-expand>* {
+    flex-grow: 1;
+}
+
 .grow {
     flex-grow: 1;
 }

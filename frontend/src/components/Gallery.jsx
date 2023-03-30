@@ -1,15 +1,17 @@
 import Article from "./Article";
 
+import logements from "../logements.json";
+
+
 const Gallery = () => {
     return (
 
         <section className="gallery items flex gap-3 flex-expand  flex-center">
-            <Article />
-            <Article />
-            <Article />
-            <Article />
-            <Article />
-            <Article />
+
+            {logements && logements.map((logement) => (
+                <Article key={logement.id} data={logement} />
+            ))}
+
 
         </section>
     )
