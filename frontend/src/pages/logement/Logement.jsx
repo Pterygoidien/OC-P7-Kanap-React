@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Accordion from "../../components/Accordion";
 import Button from "../../components/Button";
+import Carousel from "../../components/carousel/Carousel";
 
 import styles from "./Logement.module.scss";
 
@@ -9,31 +10,15 @@ import logements from "../../assets/logements.json"
 
 
 
+
 const Logement = () => {
     const id = useParams();
     const logement = logements.find((logement) => logement.id === id.id);
-    const { title, location, tags, description, equipments, host, rating } = logement;
-
-    const desc = {
-        title: "Description",
-        content: description
-    }
-
-
-    const equip = {
-        title: "Equipements",
-        content: equipments
-            ? <ul>{equipments.map((equipment) => (
-                <li key={equipment}>{equipment}</li>
-            ))}</ul> : "Aucun équipement"
-    }
-
+    const { title, location, tags, description, equipments, host, rating, pictures } = logement;
 
     return (
         <main className="container">
-            <div className={styles['rental-carousel']}>
-                <img src={logement.cover} alt={title} />
-            </div>
+            <Carousel pictures={pictures} />
             <div className="flex flex-expand items-center">
                 <section className="rental-highlight flex flex-col gap-2">
                     <h1>
@@ -76,10 +61,14 @@ const Logement = () => {
                 </section>
             </div>
 
-            <section className="rental-accordions flex flex-responsive items-stretch">
-                <Accordion data={desc} />
-                <Accordion data={equip} />
-
+            <section className={`${styles['rental-accordions']} flex flex-responsive items-stretch gap-4`}>
+                <Accordion titre="Description"><p>{description}</p></Accordion>
+                <Accordion titre="Equipements">
+                    {equipments ? (<ul>
+                        {equipments.map((equipment) => {
+                            return (<li key={equipment}>{equipment}</li>)
+                        })} </ul>) : 'Aucun équipement'}
+                </Accordion>
             </section>
         </main>
     )

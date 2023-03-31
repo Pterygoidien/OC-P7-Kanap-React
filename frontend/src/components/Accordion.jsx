@@ -3,26 +3,31 @@ import Arrow from './Arrow';
 import Button from './Button';
 import { useState } from 'react';
 
-const Accordion = ({ data, defaultOpen = true }) => {
-    const { title, content } = data;
+const Accordion = ({ titre, children, defaultOpen = true }) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
+    const toggleOpen = () => {
+        setIsOpen(!isOpen);
+    }
+
+
     return (<article className={styles.accordion}>
-        <Button className="text-left w-full rounded-none rounded-t-xl flex items-center justify-between">
-            <h2>{title}</h2>
+        <Button
+            className="text-left w-full  flex items-center justify-between"
+            onClick={toggleOpen}
+        >
+            <h2>{titre}</h2>
             <Arrow />
         </Button>
-        <div className="p-1">
-            <p>{content}</p>
+        <div className={`${styles.accordion__content} rounded-b-xl ${isOpen ? styles.open : ''}`}>
+            {children}
         </div>
-    </ article>);
+    </ article >);
 }
 
 Accordion.defaultProps = {
-    data: {
-        title: "Titre",
-        content: "Contenu"
-    },
+    title: 'Aucun titre',
+    children: '<p>Aucun contenu</p>',
     defaultOpen: true
 }
 

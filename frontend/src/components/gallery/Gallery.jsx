@@ -7,7 +7,7 @@ const Gallery = () => {
     return (
 
 
-        <section className="gallery items flex gap-3 flex-expand  flex-center">
+        <section className="gallery items flex gap-5 flex-expand flex-center">
 
             {logements && logements.map((logement) => (
                 <Article key={logement.id} data={logement} />

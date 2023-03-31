@@ -1,8 +1,9 @@
 .rental-carousel {
-    height: 40%;
-    overflow: hidden;
-
-
+    img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
 }
 
 .author__picture {
@@ -11,4 +12,8 @@
     border-radius: 50%;
 
     overflow: hidden;
+}
+
+.rental-accordions {
+    position: relative;
 }
