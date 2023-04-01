@@ -4,16 +4,18 @@ import { BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "./routes";
 
 import "./scss/main.scss";
+import LogementState from "./context/LogementState";
 
 function App() {
   return (
     <div className="App">
-
-      <Router>
-        <Header />
-        <AppRoutes />
-        <Footer />
-      </Router>
+      <LogementState>
+        <Router>
+          <Header />
+          <AppRoutes />
+          <Footer />
+        </Router>
+      </LogementState>
     </div>
   );
 }

@@ -6,17 +6,11 @@ const logementReducer = (state, action) => {
                 ...state,
                 logements: action.payload,
             };
-        case 'SET_CURRENT_LOGEMENT':
+        case 'GET_LOGEMENT':
             return {
                 ...state,
                 logement: action.payload,
             };
-        case 'CLEAR_CURRENT_LOGEMENT':
-            return {
-                ...state,
-                logement: null,
-            };
-
         default:
             throw new Error('Unsupported');
     }
