@@ -12,9 +12,7 @@ const SlideshowIndex = styled.div`
 
 
 const Carousel = ({ pictures }) => {
-
     const [current, setCurrent] = useState(0);
-
     const prevHandler = () => {
         if (current > 0) {
             setCurrent(current - 1);

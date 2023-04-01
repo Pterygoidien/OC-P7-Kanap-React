@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { redirect, useParams } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import Accordion from "../../components/Accordion";
 import Button from "../../components/Button";
@@ -7,6 +7,7 @@ import LogementContext from "../../context/logementContext";
 import Rating from "../../components/Rating";
 
 import styles from "./Logement.module.scss";
+import Error404 from "../Error404";
 
 
 const Logement = () => {
@@ -18,12 +19,14 @@ const Logement = () => {
     useEffect(() => {
         getLogement(id)
         // eslint-disable-next-line
-    }, []);
+    }, [logement]);
 
+    if (!logement) {
+        return <Error404 />
+    }
 
     return (
         <main className="container">
-            {!logement && <h1>Logement introuvable</h1>}
             {logement && (
                 <>
                     <Carousel pictures={logement.pictures} />
