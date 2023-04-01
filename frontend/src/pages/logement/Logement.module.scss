@@ -14,6 +14,13 @@
     overflow: hidden;
 }
 
+.rental-infos {
+    @media screen and (min-width: 890px) {
+        flex-direction: column-reverse;
+        align-items: end;
+    }
+}
+
 .rental-accordions {
     position: relative;
 }

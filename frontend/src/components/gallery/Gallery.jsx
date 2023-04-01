@@ -3,8 +3,6 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import LogementContext from "../../context/logementContext";
 
-
-
 const Gallery = () => {
 
     const logementContext = useContext(LogementContext);
@@ -16,7 +14,7 @@ const Gallery = () => {
     }, [logements]);
 
     return (
-        <section className="gallery items flex gap-5 flex-expand flex-center">
+        <section className="gallery bg--secondary p-2 rounded-2xl items flex gap-6 flex-expand flex-center ">
             {logements && logements.map((logement) => (
                 <Article key={logement.id} data={logement} />
             ))}

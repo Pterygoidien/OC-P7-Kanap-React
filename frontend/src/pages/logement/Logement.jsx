@@ -4,6 +4,7 @@ import Accordion from "../../components/Accordion";
 import Button from "../../components/Button";
 import Carousel from "../../components/carousel/Carousel";
 import LogementContext from "../../context/logementContext";
+import Rating from "../../components/Rating";
 
 import styles from "./Logement.module.scss";
 
@@ -27,14 +28,14 @@ const Logement = () => {
                 <>
                     <Carousel pictures={logement.pictures} />
                     <div className="flex flex-expand items-center">
-                        <section className="rental-highlight flex flex-col gap-2">
+                        <section className="rental-highlight flex flex-col gap-4">
                             <h1>
                                 {logement.title}
                             </h1>
                             <h2>
                                 {logement.location}
                             </h2>
-                            <div className="flex justify-start gap-3 ">
+                            <div className="flex justify-start gap-4 ">
                                 {logement.tags && logement.tags.map((tag) => (
                                     <Button key={tag}>{tag}</Button>
 
@@ -42,14 +43,9 @@ const Logement = () => {
                             </div>
 
                         </section>
-                        <section className="rental-infos flex justify-between items-center">
-                            <div className="rental-infos__rating grow">
-                                <span>{logement.rating}</span>
-                                <span>★</span>
-                                <span>★</span>
-                                <span>★</span>
-                                <span>★</span>
-                                <span>★</span>
+                        <section className={`${styles['rental-infos']} flex justify-between items-center`}>
+                            <div className="rental-infos__rating flex grow">
+                                <Rating value={logement.rating} />
                             </div>
                             <div className="rental-infos__author flex">
                                 <div className="flex flex-col justify-center items-end gap-2">

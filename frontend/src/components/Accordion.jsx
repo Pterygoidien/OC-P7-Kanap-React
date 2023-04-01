@@ -13,7 +13,7 @@ const Accordion = ({ titre, children, defaultOpen = true }) => {
 
     return (<article className={styles.accordion}>
         <Button
-            className="text-left w-full  flex items-center justify-between"
+            className="text-left w-full flex items-center justify-between"
             onClick={toggleOpen}
         >
             <h2>{titre}</h2>
