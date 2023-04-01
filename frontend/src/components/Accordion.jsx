@@ -20,6 +20,7 @@ const Accordion = ({ titre, children, defaultOpen = true }) => {
             <Arrow />
         </Button>
         <div className={`${styles.accordion__content} rounded-b-xl ${isOpen ? styles.open : ''}`}>
+
             {children}
         </div>
     </ article >);

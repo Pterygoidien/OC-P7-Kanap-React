@@ -67,7 +67,7 @@ const Logement = () => {
                     <section className={`${styles['rental-accordions']} flex flex-responsive items-stretch gap-4`}>
                         <Accordion titre="Description"><p>{logement.description}</p></Accordion>
                         <Accordion titre="Equipements">
-                            {logement.equipments ? (<ul>
+                            {logement.equipments ? (<ul className="p-1">
                                 {logement.equipments.map((equipment) => {
                                     return (<li key={equipment}>{equipment}</li>)
                                 })} </ul>) : 'Aucun équipement'}
